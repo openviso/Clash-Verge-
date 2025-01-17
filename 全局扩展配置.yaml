@@ -23,7 +23,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
   - name: OpenAi
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ChatGPT.png
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
     proxies:
       - 自动选择
@@ -32,19 +32,6 @@ proxy-groups:
       - 台湾节点
       - 日本节点
       - 美国节点
-      - 韩国节点
-      - 手动切换
-  - name: 微软服务
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
-    type: select
-    proxies:
-      - 节点选择
-      - DIRECT
-      - 美国节点
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
       - 韩国节点
       - 手动切换
   - name: 国外媒体
@@ -61,6 +48,19 @@ proxy-groups:
       - 韩国节点
       - 手动切换
       - DIRECT
+  - name: 微软服务
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
+    type: select
+    proxies:
+      - 节点选择
+      - DIRECT
+      - 美国节点
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 韩国节点
+      - 手动切换
   - name: 漏网之鱼
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
     type: select
@@ -82,6 +82,7 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
+    hidden: true
   - name: 日本节点
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
     include-all: true
@@ -89,6 +90,7 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
+    hidden: true
   - name: 美国节点
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
     include-all: true
@@ -96,6 +98,7 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
+    hidden: true
   - name: 台湾节点
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png
     include-all: true
@@ -103,6 +106,7 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
+    hidden: true
   - name: 狮城节点
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
     include-all: true
@@ -110,6 +114,7 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
+    hidden: true
   - name: 韩国节点
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
     include-all: true
@@ -117,6 +122,7 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
+    hidden: true
 
 
 rule-providers:
@@ -218,6 +224,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  Netflix:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+    path: ./ruleset/Netflix.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   ChinaMedia:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
     path: ./ruleset/ChinaMedia.list
@@ -261,7 +274,6 @@ rule-providers:
     format: text
     type: http
 
-# 规则集  
 rules:
   - "RULE-SET,LocalAreaNetwork,DIRECT"
   - "RULE-SET,UnBan,DIRECT"
@@ -271,7 +283,7 @@ rules:
   - "RULE-SET,GoogleCN,DIRECT"
   - "RULE-SET,SteamCN,DIRECT"
   - "RULE-SET,Bing,微软服务"
-  - "RULE-SET,OneDrive,微软服务"
+  - "RULE-SET,OneDrive,节点选择"
   - "RULE-SET,Microsoft,微软服务"
   - "RULE-SET,Apple,DIRECT"
   - "RULE-SET,Telegram,节点选择"
@@ -286,7 +298,5 @@ rules:
   - "GEOIP,CN,DIRECT"
   - "MATCH,漏网之鱼"
 
-# 单个规则  
-+rules:
-  - "DOMAIN-SUFFIX,baidu.com,DIRECT"
-  - "DOMAIN-SUFFIX,tencent.com,DIRECT"
+
+
