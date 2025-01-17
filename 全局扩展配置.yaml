@@ -224,13 +224,6 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  Netflix:
-    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
-    path: ./ruleset/Netflix.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
   ChinaMedia:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
     path: ./ruleset/ChinaMedia.list
@@ -297,6 +290,3 @@ rules:
   - "RULE-SET,Download,DIRECT"
   - "GEOIP,CN,DIRECT"
   - "MATCH,漏网之鱼"
-
-
-
