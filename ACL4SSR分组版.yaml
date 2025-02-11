@@ -23,7 +23,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
   - name: OpenAi
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ChatGPT.png
     type: select
     proxies:
       - 自动选择
@@ -35,7 +35,7 @@ proxy-groups:
       - 韩国节点
       - 手动切换
   - name: 微软服务
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Copilot.png
     type: select
     proxies:
       - 节点选择
@@ -139,113 +139,141 @@ proxy-groups:
 
 
 rule-providers:
-  Lan:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Lan/Lan.list
-    path: ./ruleset/Lan.list
+  LocalAreaNetwork:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./ruleset/LocalAreaNetwork.list
     behavior: classical
     interval: 86400
     format: text
     type: http
-  Advertising:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Advertising/Advertising.list
-    path: ./ruleset/Advertising.list
+  UnBan:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+    path: ./ruleset/UnBan.list
     behavior: classical
     interval: 86400
     format: text
     type: http
-  Google:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Google/Google.list
-    path: ./ruleset/Google.list
+  BanAD:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./ruleset/BanAD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BanProgramAD:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./ruleset/BanProgramAD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleFCM:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+    path: ./ruleset/GoogleFCM.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleCN:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./ruleset/GoogleCN.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  SteamCN:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./ruleset/SteamCN.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   Bing:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Bing/Bing.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
     path: ./ruleset/Bing.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   OneDrive:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/OneDrive/OneDrive.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
     path: ./ruleset/OneDrive.list
     behavior: classical
-    interval: 86400   
+    interval: 86400
     format: text
     type: http
   Microsoft:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Microsoft/Microsoft.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
     path: ./ruleset/Microsoft.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   Apple:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Apple/Apple.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
     path: ./ruleset/Apple.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   Telegram:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Telegram/Telegram.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
     path: ./ruleset/Telegram.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   OpenAi:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/OpenAI/OpenAI.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
     path: ./ruleset/OpenAi.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   YouTube:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/YouTube/YouTube.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
     path: ./ruleset/YouTube.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   ChinaMedia:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/ChinaMedia/ChinaMedia.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
     path: ./ruleset/ChinaMedia.list
     behavior: classical
     interval: 86400
     format: text
     type: http
-  GlobalMedia:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/GlobalMedia/GlobalMedia.list
-    path: ./ruleset/GlobalMedia.list
+  ProxyMedia:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./ruleset/ProxyMedia.list
     behavior: classical
     interval: 86400
     format: text
     type: http
-  Global:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Global/Global.list
-    path: ./ruleset/Global.list
+  ProxyGFWlist:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+    path: ./ruleset/ProxyGFWlist.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   ChinaDomain:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/ChinaDomain/ChinaDomain.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
     path: ./ruleset/ChinaDomain.list
     behavior: domain
     interval: 86400
     format: text
     type: http
-  ChinaIPs:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/ChinaIPs/ChinaIPs.list
-    path: ./ruleset/ChinaIPs.list
+  ChinaCompanyIp:
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./ruleset/ChinaCompanyIp.list
     behavior: ipcidr
     interval: 86400
     format: text
     type: http
   Download:
-    url: https://mirror.ghproxy.com/https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Download/Download.list
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
     path: ./ruleset/Download.list
     behavior: classical
     interval: 86400
@@ -258,11 +286,15 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-
+    
 rules:
-  - "RULE-SET,Lan,DIRECT"
-  - "RULE-SET,Advertising,REJECT"
-  - "RULE-SET,Google,节点选择"
+  - "RULE-SET,LocalAreaNetwork,DIRECT"
+  - "RULE-SET,UnBan,DIRECT"
+  - "RULE-SET,BanAD,REJECT"
+  - "RULE-SET,BanProgramAD,REJECT"
+  - "RULE-SET,GoogleFCM,节点选择"
+  - "RULE-SET,GoogleCN,DIRECT"
+  - "RULE-SET,SteamCN,DIRECT"
   - "RULE-SET,Bing,微软服务"
   - "RULE-SET,OneDrive,节点选择"
   - "RULE-SET,Microsoft,微软服务"
@@ -271,10 +303,10 @@ rules:
   - "RULE-SET,OpenAi,OpenAi"
   - "RULE-SET,YouTube,节点选择"
   - "RULE-SET,ChinaMedia,DIRECT"
-  - "RULE-SET,GlobalMedia,国外媒体"
-  - "RULE-SET,Global,节点选择"
+  - "RULE-SET,ProxyMedia,国外媒体"
+  - "RULE-SET,ProxyGFWlist,节点选择"
   - "RULE-SET,ChinaDomain,DIRECT"
-  - "RULE-SET,ChinaIPs,DIRECT"
+  - "RULE-SET,ChinaCompanyIp,DIRECT"
   - "RULE-SET,Download,DIRECT"
   - "RULE-SET,Scholar,学术服务" 
   - "GEOIP,CN,DIRECT"
