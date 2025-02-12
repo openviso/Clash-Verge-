@@ -1,5 +1,5 @@
 #!name=Spotify
-#!desc=解锁premium（建议登录后再打开脚本,重启app等待脚本生效）
+#!desc=解锁premium,登录后再打开脚本,重启app等待脚本生效
 #!openUrl=https://apps.apple.com/app/id324684580
 #!loon_version = 3.2.6(821)
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Spotify.png
